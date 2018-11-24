@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weniger ist mehr</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar is-white">
+    <div class="navbar-brand">
+      <div class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Über Weniger ist mehr
+        </a>
+        <a class="navbar-item">
+          Impressum / Datenschutz
+        </a>
+      </div>
+  
+      <div class="navbar-end">
+        <a class="nav-item">
+          <img src="./images/tw.png" alt="Twitter">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-primary is-medium">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-2">
+          Weniger ist mehr
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="section main">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        {{ range .Data.Pages }}
+        <a href="{{.Permalink}}">
+          <div class="card">
+            <header class="card-header">
+              <div class="card-header-title">
+                <div class="tags">
+                  {{ range .Params.tags }}
+                  <span class="tag">{{ . }}</span>
+                  {{ end }}
+                </div>
+              </div>
+              <span class="card-header-icon timestamp">
+                  {{.Date.Format "02. January 2006"}}
+              </span>
+            </header>
+            <div class="card-image">
+              <figure class="image is-3by2">
+                <img src="{{ .Params.titleImage }}" alt="Image">
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <h3 class="title is-3">{{ .Params.title }}</h3>
+                </div>
+              </div>
+              <div class="content">
+                {{ .Summary  }}
+              </div>
+            </div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  <script async type="text/javascript" src="/js/burger.js"></script>
+</body>
+</html>

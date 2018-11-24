@@ -1,0 +1,123 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+@media screen and (max-width: 769px) {
+  .ordered-mobile {
+    display: flex;
+    flex-flow: column;
+  }
+  .sidebar-welcome { order: 2; }
+  .sidebar-bergpost { order: 3;  }
+  .sidebar-hike-summary { order: 1; }
+  .sidebar-instafeed { order: 4; }
+}
+
+.header-image-post {
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size:  cover;
+}
+.is-outlined {
+  background-color:transparent;
+  color:#fff;
+}
+.hero-cta {
+  padding: 30px 0;
+}
+.panel-block.section p {
+  font-size: 17px;
+  line-height: 1.4;
+  color:#95A5A6;
+}
+.section.main {
+  background-color:#F0F0F0;
+}
+.icon-block {
+  font-size:5em;
+}
+
+.card {
+  margin-bottom: 5em;
+}
+
+#subscribe-button {
+  background-color: #8d4a59;
+}
+
+#mufflons {
+  margin-top: 1em;
+  left: 20%;
+  width: 60%;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.footer a {
+  color: #8d4a59;
+}
+
+.tag:not(body) {
+  background-color: #8d864a;
+  color: white;
+}
+
+.text h1 {
+  margin-top: 1em;
+}
+
+.text h2 {
+  margin-top: 1.5em;
+}
+
+.text h3 {
+  margin-top: 1em;
+}
+
+.text h4 {
+  margin-top: 0.5em;
+}
+
+.text p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+figure {
+  position: relative;
+  margin-bottom: 0.5em;
+}
+
+figure img {
+  display: block;
+}
+
+figcaption {
+ background: rgba(239, 239, 239, 0.7);
+ color: #000;
+ position: absolute;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ text-align: center;
+}
+
+#instafeed img {
+  margin: 0.5em;
+}
+
+/* bugfix for https://github.com/Dogfalo/materialize/issues/2582 */
+.browser-default-uls ul {
+  padding-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.browser-default-uls ul li {
+  list-style-type: disc !important;
+}
+.browser-default-uls ul li ul li {
+  list-style-type: circle !important;
+}
+/* bugfix end */

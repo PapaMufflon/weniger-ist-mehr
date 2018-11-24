@@ -1,0 +1,5 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Weniger ist mehr"
+theme = "weniger-ist-mehr"
+publishDir = "docs"

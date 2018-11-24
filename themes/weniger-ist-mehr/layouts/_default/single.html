@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weniger ist mehr</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+<body>
+  <nav class="navbar is-white">
+    <div class="navbar-brand">
+      <div class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <div id="navMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          Über Weniger ist mehr
+        </a>
+        <a class="navbar-item">
+          Impressum / Datenschutz
+        </a>
+      </div>
+  
+      <div class="navbar-end">
+        <a class="nav-item">
+          <img src="./../../images/tw.png" alt="Twitter">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="section main">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <section class="hero is-primary is-fullheight header-image header-image-post" style="background-image: linear-gradient(rgba(0, 0, 0, 0.29),rgba(0, 0, 0, 0.49)),url('{{ .Params.titleImage }}')">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <h1 class="title is-2">
+                {{ .Title }}
+              </h1>
+            </div>
+          </div>
+        </section>
+
+        <div class="columns is-centered">
+          <div class="column is-8-desktop">
+            <div class="text has-text-justified is-size-5 browser-default-uls">
+              <hr>
+              {{ .Content | replaceRE "<p><img src=\"([^\"]+)\" alt=\"([^\"]+)\" title=\"([^\"]+)\" /></p>" "<figure class=\"image\"><img src=\"$1\" alt=\"$2\"><figcaption>$3</figcaption></figure>" | replaceRE "<h([^\"]{1})" "<h$1 class=\"title is-$1\"" | safeHTML }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script async type="text/javascript" src="/js/burger.js"></script>
+</body>
+</html>
